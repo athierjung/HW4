@@ -64,7 +64,25 @@ public class ReadQuery {
     public String getHTMLTable () {
         
         String table = "";
-        table += "<table border=1>";
+        table += "<table>";
+        table += "<th>";
+            table += "PlayerID";
+        table += "</th>";
+        table += "<th>";
+            table += "Player Name";
+        table += "</th>";
+        table += "<th>";
+            table += "Team";
+        table += "</th>";
+        table += "<th>";
+            table += "Position";
+        table += "</th>";
+        table += "<th>";
+            table += "Age";
+        table += "</th>";
+        table += "<th>";
+            table += "Delete";
+        table += "</th>";
         
         try {
             while (this.results.next()){
@@ -77,29 +95,30 @@ public class ReadQuery {
                 
                 
                 table += "<tr>";
-                    table += "<td>";
-                        table += player.getPlayerID();
-                    table += "</td>";
-                
-                    table += "<td>";
-                        table += player.getPlayerName();
-                    table += "</td>";
-                
-                    table += "<td>";
-                        table += player.getTeam();
-                    table += "</td>";
-                
-                    table += "<td>";
-                        table += player.getPositionName();
-                    table += "</td>";
-                
-                    table += "<td>";
-                        table += player.getAge();
-                    table += "</td>";
                     
-                    table += "<td>";
-                    table += "<a href=delete?PlayerID=" + player.getPlayerID() + "> Delete </a>";
-                    table += "</td>";
+                        table += "<td>";
+                            table += player.getPlayerID();
+                        table += "</td>";
+                    
+                        table += "<td>";
+                            table += player.getPlayerName();
+                        table += "</td>";
+                   
+                        table += "<td>";
+                            table += player.getTeam();
+                        table += "</td>";
+                    
+                        table += "<td>";
+                            table += player.getPositionName();
+                        table += "</td>";
+                    
+                        table += "<td>";
+                            table += player.getAge();
+                        table += "</td>";
+                    
+                        table += "<td>";
+                        table += "<a href=delete?PlayerID=" + player.getPlayerID() + "> Delete </a>";
+                        table += "</td>";
                 table += "</tr>";
             }
         } catch (SQLException ex) {
